@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: bisque;
+    font-size: 16px;
 }
 
 .div-titulo {
@@ -23,68 +23,33 @@ body {
 
 .contenedor {
     width: 100%;
-    height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-}
-
-/* ESTILOS FORMULARIO */
-.contenedor .div-formulario {
-    width: 30%;
-    height: 250px;
-    margin: 15px 15px;
-    background-color: rgb(135, 132, 132);
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.contenedor .div-formulario,
+.contenedor .div-listado {
+    width: 80%; /* Ajusta según tus necesidades */
+    margin: 15px 0;
+}
+
+.contenedor .div-formulario {
+    background-color: rgb(135, 132, 132);
     border-radius: 10px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.contenedor .div-formulario h2 {
-    margin-top: 10px;
-    font-weight: 300;
-    font-size: 2em;
-    color: whitesmoke;
-}
-
-.contenedor .div-formulario form {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenedor .div-formulario form input{
-    width: 90%;
-    height: 50%;
-    padding: 10px 10px;
-    margin: 10px 10px;
-}
-
-.contenedor .div-formulario form button {
-    width: 60%;
-    padding: 10px 10px;
-    margin: 10px 10px;
-}
-
-/* ESTILOS LISTADO */
 .contenedor .div-listado {
-    width: 55%;
-    height: calc(100% - 50px);
-    margin: 15px 15px;
     background-color: rgb(135, 132, 132);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 10px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
     padding-left: 3%;
 }
 
+.contenedor .div-formulario h2,
 .contenedor .div-listado h2 {
     margin-top: 10px;
     font-weight: 300;
@@ -92,14 +57,28 @@ body {
     color: whitesmoke;
 }
 
+.contenedor .div-formulario form,
 .contenedor .div-listado .div-empleados {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-    padding: 0 30px;
+}
+
+.contenedor .div-formulario form input,
+.contenedor .div-listado .div-empleados p {
+    width: 90%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border-radius: 3%;
+}
+
+.contenedor .div-formulario form button {
+    width: 60%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border-radius: 3%;
+}
+
+.contenedor .div-listado .div-empleados {
+    padding: 0 2%;
 }
 
 .contenedor .div-listado .div-empleados p {
@@ -108,42 +87,27 @@ body {
     color: #ddd;
 }
 
-hr {
-    width: 100%;
-    height: 1px;
-}
-
-.btn {
-    padding: 5px 10px;
-    border: none;
-    margin: 0 5px;
-    color: white;
-    border-radius: 50px;
-}
-
-.btn-editar {
-    background-color: green;
-}
-
-.btn-eliminar {
-    background-color: red;
-}
-
-#pregunta,
-#btnAgregar{
-    border-radius: 3%;
-}
-
-/* Agrega o modifica estilos en tu archivo estilos.css */
-
-/* Agrega o modifica estilos en tu archivo estilos.css */
-
 .contenedor-pregunta {
-    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.seccion-publicacion {
+.contenedor-pregunta .publicacion,
+.contenedor-pregunta .comentarios {
+    width: 80%; /* Ajusta según tus necesidades */
+    box-sizing: border-box;
+}
+
+.seccion-publicacion,
+.seccion-comentarios {
     margin-bottom: 10px;
+}
+
+.seccion-publicacion p {
+    color: #ffc9c9;
+    font-size: 1.4em;
 }
 
 .seccion-comentarios input {
@@ -152,28 +116,33 @@ hr {
     margin-right: 10px;
 }
 
-.comentarios{
+.comentarios {
     padding-left: 7%;
 }
 
+.btn,
+.btn-editar,
+.btn-eliminar,
 .btn-comentar {
     padding: 10px;
+    border-radius: 3%;
 }
 
+@media (max-width: 768px) {
+    .contenedor .div-formulario,
+    .contenedor .div-listado {
+        width: 100%;
+    }
 
-.contenedor-pregunta {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
+    .contenedor-pregunta .publicacion,
+    .contenedor-pregunta .comentarios {
+        width: 100%;
+    }
 
-.contenedor-pregunta .publicacion {
-    width: 48%; /* Ajusta según tus necesidades */
-    box-sizing: border-box;
-}
-
-.contenedor-pregunta .comentarios {
-    width: 48%; /* Ajusta según tus necesidades */
-    box-sizing: border-box;
+    .contenedor .div-formulario form input,
+    .contenedor .div-formulario form button,
+    .contenedor .div-listado .div-empleados p,
+    .seccion-comentarios input {
+        width: 100%;
+    }
 }
